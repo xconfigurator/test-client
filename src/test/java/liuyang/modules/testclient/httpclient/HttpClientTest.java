@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 最简示例 GET/POST
  * @author liuyang(wx)
  * @since 2022/1/12
  */
@@ -31,12 +32,14 @@ public class HttpClientTest {
     @Test
     void testGet() throws IOException, ParseException {
         //String url = "http://www.baidu.com";
-        String url = "http://www.sina.com";
+        String url = "http://www.sina.com/";// 实测https://www.sina.com也OK。
+        //String url = "https://muyan-yootk.com/";// 调用方法参见HttpClientSSLTest
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response = httpClient.execute(httpGet);
 
-        showResponse(response);
+        //showResponse(response);
+        ResponseUtil.showResponse(response);
 
         response.close();
         httpClient.close();
@@ -62,7 +65,8 @@ public class HttpClientTest {
         httpPost.setEntity(urlEncodedFormEntity);
         CloseableHttpResponse response = httpClient.execute(httpPost);
 
-        showResponse(response);
+        //showResponse(response);
+        ResponseUtil.showResponse(response);
 
         response.close();
         httpClient.close();

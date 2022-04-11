@@ -1,6 +1,6 @@
-package liuyang.modules.testclient.httpclient;
+package liuyang.testclient.modules.apache.httpclient5;
 
-import liuyang.common.utils.IdUtils;
+import liuyang.testclient.common.utils.IdUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;

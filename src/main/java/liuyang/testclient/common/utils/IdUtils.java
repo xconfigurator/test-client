@@ -1,4 +1,4 @@
-package liuyang.common.utils;
+package liuyang.testclient.common.utils;
 
 import java.util.UUID;
 

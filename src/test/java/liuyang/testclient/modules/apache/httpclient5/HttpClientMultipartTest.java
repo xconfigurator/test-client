@@ -1,4 +1,4 @@
-package liuyang.modules.testclient.httpclient;
+package liuyang.testclient.modules.apache.httpclient5;
 
 /**
  * 上传文件示例

@@ -3,6 +3,8 @@ package liuyang.testclient.common.webservice.cxf;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.endpoint.ClientLifeCycleListener;
+import org.apache.cxf.ext.logging.LoggingInInterceptor;
+import org.apache.cxf.ext.logging.LoggingOutInterceptor;
 import org.apache.cxf.transport.Conduit;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transport.http.spring.HttpConduitBeanDefinitionParser;
@@ -40,6 +42,8 @@ public class CXFClientLifeCycleListener implements ClientLifeCycleListener {
         log.info("SOAP clientCreated");
         HTTPConduit conduit = (HTTPConduit) client.getConduit();
         conduit.setClient(clientPolicy);
+        client.getInInterceptors().add(new LoggingInInterceptor());// for 与海能达联调
+        client.getOutInterceptors().add(new LoggingOutInterceptor());// for 与海能达联调
     }
 
     @Override
@@ -51,6 +55,9 @@ public class CXFClientLifeCycleListener implements ClientLifeCycleListener {
             client.destroy();// ? 还是用client.close();?  20220419
 
         }*/
+        // 都会引起死递归，不要在这个钩子里显式调用。
+        // client.close()
+        // client.destroy()
         HTTPConduit conduit = (HTTPConduit) client.getConduit();
         conduit.close();
     }

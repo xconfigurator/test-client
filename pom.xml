@@ -86,6 +86,12 @@
             <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
             <version>${cxf-spring-boot-starter-jaxrs.version}</version>
         </dependency>-->
+        <!-- CXF Logging Interceptors -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-features-logging</artifactId>
+            <version>${cxf-spring-boot-starter-jaxrs.version}</version>
+        </dependency>
 
         <!-- EasyExcel -->
         <dependency>

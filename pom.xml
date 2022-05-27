@@ -74,7 +74,7 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <!-- CXF -->
+        <!-- CXF begin -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
@@ -92,6 +92,9 @@
             <artifactId>cxf-rt-features-logging</artifactId>
             <version>${cxf-spring-boot-starter-jaxrs.version}</version>
         </dependency>
+        <!-- CXF end -->
+
+
 
         <!-- EasyExcel -->
         <dependency>

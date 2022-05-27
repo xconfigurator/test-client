@@ -1,13 +1,12 @@
 package liuyang.testclient.scheduler;
 
-import liuyang.testclient.modules.webservice.soap.cxf.stub01.HelloInterface;
-import liuyang.testclient.modules.webservice.soap.cxf.stub01.HelloServiceService;
+import liuyang.testclient.modules.app.webservice.soap.cxf.stub01.HelloInterface;
+import liuyang.testclient.modules.app.webservice.soap.cxf.stub01.HelloServiceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.xml.namespace.QName;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -54,7 +53,7 @@ javax.xml.ws.WebServiceException: org.apache.cxf.service.factory.ServiceConstruc
 	at org.apache.cxf.jaxws.ServiceImpl.<init>(ServiceImpl.java:128)
 	at org.apache.cxf.jaxws.spi.ProviderImpl.createServiceDelegate(ProviderImpl.java:82)
 	at javax.xml.ws.Service.<init>(Service.java:77)
-	at liuyang.testclient.modules.webservice.soap.cxf.stub01.HelloServiceService.<init>(HelloServiceService.java:43)
+	at liuyang.testclient.modules.app.webservice.soap.cxf.stub01.HelloServiceService.<init>(HelloServiceService.java:43)
 	at liuyang.testclient.scheduler.CXFClientScheduler.soapCxfStub01(CXFClientScheduler.java:32)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
